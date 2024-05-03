@@ -11,5 +11,3 @@ Feature: Comunicación con pacientes
         Cuando el psicólogo accede a su bandeja de entrada de mensajes dentro de la plataforma
         Entonces el sistema muestra el mensaje del paciente de manera segura
         Y el psicólogo puede responder al mensaje del paciente de manera confidencial utilizando el sistema de mensajería seguro dentro de la plataforma.
-
-
