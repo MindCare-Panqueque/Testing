@@ -1,5 +1,6 @@
 Feature: Agendar Citas con Psicólogos
 
+
     Scenario: Selección de psicólogo
         Dado que el paciente desea agendar una cita con un psicólogo
         Cuando el paciente busca al psicólogo de su preferencia en la plataforma desde la página de inicio
