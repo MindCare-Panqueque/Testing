@@ -1,4 +1,4 @@
-Feature: Ingreso a la interfaz de Iniciar Sesión
+Feature: Ingreso a la interfaz de Crear Cuenta
 
     Scenario: : Redirigir al paciente al apartado de creación de cuenta
         Dado que un visitante está en la landing page
