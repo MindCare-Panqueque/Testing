@@ -1,5 +1,6 @@
 Feature: Integración con plataformas de Videoconferencia
 
+
     Scenario: Creación de una sesión virtual
         Dado que el psicólogo está programando una cita con un paciente
         Cuando el psicólogo selecciona la opción para programar una sesión virtual
