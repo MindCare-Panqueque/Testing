@@ -16,9 +16,3 @@ Feature: Ingreso a la interfaz de Iniciar Sesión
         Y hace clic en el botón "Crear cuenta"
         Entonces se crea exitosamente la cuenta 
         Y redirige al paciente a la página principal de su interfaz.
-
-    Scenario: Ingresar datos inválidos para crear una cuenta
-        Dado que el paciente está en la interfaz de creación de cuenta para paciente
-        Cuando ingresa datos inválidos para crear una cuenta
-        Y hace clic en el botón "Crear cuenta"
-        Entonces el sistema muestra un mensaje de error indicando que los datos ingresados son inválidos.
