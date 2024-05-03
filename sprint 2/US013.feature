@@ -1,4 +1,5 @@
 Feature: Visualización de Tareas Asignadas
+
     Scenario: Scenario name: Acceso a la sección de tareas asignadas
         Dado que el paciente desea visualizar las tareas asignadas por su psicólogo
         Cuando el paciente ingresa a la plataforma y accede a la sección de notas o tareas asignadas
