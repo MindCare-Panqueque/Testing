@@ -1,5 +1,6 @@
 Feature: Gestionar citas programadas
 
+
     Scenario: Visualización de citas programadas
         Dado que el paciente desea gestionar sus citas programadas
         Cuando el paciente accede a la sección de "citas" en la plataforma
