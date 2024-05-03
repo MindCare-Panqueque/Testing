@@ -15,17 +15,17 @@
         Cuando el psicólogo selecciona la opción "Citas Programadas"
         Entonces el sistema muestra solo las citas que están programadas en el calendario.
 
-    Escenario 04: Visualiza sólo las citas confirmadas en el calendario
+    Scenario: Visualiza sólo las citas confirmadas en el calendario
         Dado que el psicólogo está viendo el calendario de citas
         Cuando el psicólogo selecciona la opción "Citas Confirmadas"
         Entonces el sistema muestra solo las citas que están confirmadas en el calendario.
 
-    Escenario 05: Visualiza sólo las citas canceladas en el calendario
+    Scenario: Visualiza sólo las citas canceladas en el calendario
         Dado que el psicólogo está viendo el calendario de citas
         Cuando el psicólogo selecciona la opción "Citas Canceladas"
         Entonces el sistema muestra solo las citas que están canceladas en el calendario.
 
-Escenario 06: Visualiza solo las primeras sesiones en el calendario
-Dado que el psicólogo está viendo el calendario de citas
-Cuando el psicólogo selecciona la opción "Primeras Sesiones"
-Entonces el sistema muestra solo las primeras sesiones programadas de los pacientes nuevos en el calendario.
+    Scenario: Visualiza solo las primeras sesiones en el calendario
+        Dado que el psicólogo está viendo el calendario de citas
+        Cuando el psicólogo selecciona la opción "Primeras Sesiones"
+        Entonces el sistema muestra solo las primeras sesiones programadas de los pacientes nuevos en el calendario.
