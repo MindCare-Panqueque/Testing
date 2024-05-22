@@ -1,18 +1,26 @@
 Feature: Ingreso a la interfaz de Iniciar Sesión
 
-    Scenario: Redirigir al visitante al apartado de inicio de sesión
-        Dado que el visitante se encuentra en la landing page y quiere iniciar sesión en MindCare
-        Cuando haga clic al botón de "iniciar sesión" 
-        Entonces será enviado a la pestaña de inicio de sesión.
+        Scenario: Redirigir al psicólogo al apartado de creación de cuenta
+            Given que un visitante está en la landing page
+            When selecciona la opción "Crear cuenta"
+            Then el sistema  redirige al visitante a la página de selección de plan.
         
-    Scenario: Ingresar datos correctos de su cuenta
-        Dado que el visitante se encuentra en la pestaña de inicio de sesión
-        Cuando ingrese sus datos
-        Y le dé clic a Ingresar
-        Entonces podrá ingresar a las diferentes secciones que posee según su usuario.
+        Scenario: Seleccionar el plan de psicólogo
+            Given que el visitante está en la página de selección de plan
+            When selecciona el plan de "Psicólogo"
+            Then el sistema redirige al visitante a la interfaz de creación de cuenta para psicólogo.
+            
+        Scenario: Ingresar datos válidos para crear una cuenta de psicólogo
+            Given que el psicólogo está en la interfaz de creación de cuenta para psicólogo
+            When proporciona un correo electrónico, nombre, apellidos, nombre de la institución y adjunta archivos que prueben sus estudios
+            And crea su contraseña
+            And hace clic en el botón "Crear cuenta"
+            Then el sistema crea exitosamente la cuenta 
+            And redirige al psicólogo a la página principal de su interfaz.
+        
+        Scenario: Ingresar datos inválidos para crear una cuenta de psicólogo
+            Given que el psicólogo está en la interfaz de creación de cuenta para psicólogo
+            When ingresa datos inválidos para crear una cuenta
+            And hace clic en el botón "Crear cuenta"
+            Then el sistema muestra un mensaje de error indicando que los datos ingresados son inválidos.
 
-    Scenario: Ingresar datos incorrectos de su cuenta
-        Dado que el visitante se encuentra en la pestaña de inicio de sesión
-        Cuando ingrese datos incorrectos
-        Y le dé clic a Ingresar
-        Entonces recibirá un mensaje de error indicando que los datos son incorrectos.
