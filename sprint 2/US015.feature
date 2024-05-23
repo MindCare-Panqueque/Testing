@@ -1,18 +1,22 @@
-Feature: Agendar Citas con Psicólogos
+Feature: Gestionar citas programadas
 
-
-    Scenario: Selección de psicólogo
-        Dado que el paciente desea agendar una cita con un psicólogo
-        Cuando el paciente busca al psicólogo de su preferencia en la plataforma desde la página de inicio
-        Entonces el sistema muestra al psicólogo y su disponibilidad de horarios en su perfil
-
-    Scenario: Reserva de cita
-        Dado que el paciente ha seleccionado al psicólogo de su preferencia
-        Y visualiza su disponibilidad de horarios
-        Cuando el paciente elige una fecha disponible en el calendario del psicólogo
-        Entonces el sistema le muestra automáticamente un resumen de su sesión reservada.
-
-    Scenario: Pago de la sesión
-        Dado que el paciente visualiza el resumen de su reservada
-        Cuando le da clic a “Ir  a pagar”
-        Entonces el sistema redirige al paciente a la sección de pagos para completar la transacción.
+    Scenario: Visualización de citas programadas
+        Given que el paciente desea gestionar sus citas programadas
+        When el paciente accede a la sección de "citas" en la plataforma
+        Then el sistema muestra las citas del paciente en orden de fecha, junto con opciones para cada cita, como "cancelar cita", "reprogramar cita", "pagar cita" o "confirmar cita".
+    
+    Scenario: Cancelación de cita
+        Given que el paciente desea cancelar una cita programada
+        When el paciente selecciona la opción "cancelar cita" para la cita deseada
+        Then el sistema confirma la cancelación de la cita y actualiza el estado de la cita en consecuencia.
+    
+    Scenario: Reprogramación de cita
+        Given que el paciente desea reprogramar una cita programada
+        When el paciente selecciona la opción "reprogramar cita" para la cita deseada
+        Then el sistema permite al paciente seleccionar una nueva fecha y hora para la cita
+        And el sistema guarda automáticamente los cambios realizados.
+    
+    Scenario: Confirmación de acción
+        Given que el paciente ha realizado una acción sobre una cita (cancelar, reprogramar, pagar o confirmar)
+        When el sistema procesa la acción solicitada por el paciente
+        Then el sistema envía una confirmación de la acción realizada mediante el mensaje “[acción realizada] con éxito”.
