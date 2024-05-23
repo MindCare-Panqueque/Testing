@@ -1,33 +1,14 @@
 Feature: Pagar cita
 
-    Scenario: Visualización de citas programadas
-        Given que el paciente desea gestionar sus citas programadas
-        When el paciente accede a la sección de "citas" en la plataforma
-        Then el sistema muestra las citas del paciente en orden de fecha, junto con opciones para cada cita, como "cancelar cita", "reprogramar cita", "pagar cita" o "confirmar cita".
+    Scenario: Pago de la cita
+        Given que el paciente se encuentra en la sección de “citas” 
+        When el paciente quiera pagar una cita
+        Then hará click a la opción de “Pagar”
 
-    Scenario: Cancelación de cita
-        Given que el paciente desea cancelar una cita programada
-        When el paciente selecciona la opción "cancelar cita" para la cita deseada
-        Then el sistema confirma la cancelación de la cita y actualiza el estado de la cita en consecuencia.
-    
-    Scenario: Reprogramación de cita
-        Given que el paciente desea reprogramar una cita programada
-        When el paciente selecciona la opción "reprogramar cita" para la cita deseada
-        Then el sistema permite al paciente seleccionar una nueva fecha y hora para la cita
-        And el sistema guarda automáticamente los cambios realizados.
-    
-    Scenario: Confirmación de acción
-        Given que el paciente ha realizado una acción sobre una cita (cancelar, reprogramar, pagar o confirmar)
-        When el sistema procesa la acción solicitada por el paciente
-        Then el sistema envía una confirmación de la acción realizada mediante el mensaje “[acción realizada] con éxito”.
-
-
-    Scenario: Pagar la cita
-        Dado que el paciente desea pagar una cita programada
-        Cuando el paciente selecciona la opción "pagar cita" para la cita deseada
-        Entonces el sistema redirecciona al paciente a la sección de Finanzas.
-
-    Scenario: Confirmación de acción
-        Dado que el paciente ha realizado una acción sobre una cita (cancelar, reprogramar, pagar o confirmar)
-        Cuando el sistema procesa la acción solicitada por el paciente
-        Entonces el sistema envía una confirmación de la acción realizada mediante el mensaje “[acción realizada] con éxito”.
+    Scenario: Confirmación de pago
+        Given que el paciente es redirigido a la sección de “Finanzas”
+        When el paciente corrobore los datos de la sesión
+        And le de click a “Pagar”
+        And le aparezca una interfaz de pago segura para realizar el abono
+        Then el sistema actualizará estado de la cita y notifica al psicólogo por correo sobre la confirmación del pago
+        
